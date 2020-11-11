@@ -1,0 +1,269 @@
+@font-face {
+    font-family: "Gilroy-Light";
+    src: url(./Gilroy-Light.otf);
+}
+
+@font-face {
+    font-family: "Gilroy-ExtraBold";
+    src: url(./Gilroy-ExtraBold.otf);
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Gilroy-Light", sans-serif;
+}
+
+.page-wrapper {
+    display: flex;
+    height: 100vh;
+
+    .col-left {
+        flex: 1;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+
+        .menu {
+            flex: 3;
+            padding: 2rem 4rem;
+            overflow: hidden;
+            h1 {
+                color: white;
+                margin: 0;
+            }
+            ol {
+                margin: 4rem 0;
+                padding: 0;
+
+                li {
+                    a {
+                        text-decoration: none;
+                        color: rgb(192, 192, 192);
+                    }
+
+                    font-size: 1.25rem;
+                    margin: 3rem 0;
+                    padding: 0.5rem 0;
+                    counter-increment: counter;
+                    position: relative;
+
+                    &::before {
+                        color: rgb(117, 117, 117);
+                        position: absolute;
+                        top: -20px;
+                        content: "0" counter(counter);
+                    }
+                    &::marker {
+                        font-size: 0;
+                    }
+
+                    &.active {
+                        color: white;
+                        &::before {
+                            color: white;
+                        }
+                        &::after {
+                            width: 200%;
+                            position: absolute;
+                            height: 1px;
+                            content: "";
+                            bottom: 0;
+                            left: 0;
+                            border-bottom: 1px solid white;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            .top {
+                flex: 1;
+                background-color: #e2743e;
+                color: black;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                img {
+                    cursor: pointer;
+                }
+            }
+            .bottom {
+                flex: 4;
+                background-image: url(./img/next_img.jpg);
+                background-size: cover;
+                display: flex;
+                justify-content: space-between;
+                padding: 1rem;
+                align-items: flex-start;
+
+                img {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .col-center {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+
+        .heading {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem 6rem;
+
+            h1 {
+                font-family: "Gilroy-ExtraBold", sans-serif;
+                text-transform: uppercase;
+                font-size: 4rem;
+                margin: 0;
+
+                span {
+                    color: white;
+                    text-shadow: -1px -1px 0 #e39074, 1px -1px 0 #e39074, -1px 1px 0 #e39074, 1px 1px 0 #e39074;
+                }
+            }
+            h2 {
+                span {
+                    font-family: "Gilroy-ExtraBold", sans-serif;
+                }
+            }
+        }
+
+        .hero {
+            flex: 3;
+            background-image: url(./img/hero.png);
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6rem;
+
+            .container {
+                width: 50%;
+                h2 {
+                    color: white;
+                    font-family: "Gilroy-ExtraBold", sans-serif;
+                    font-size: 3rem;
+                }
+
+                .actions {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    img {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .col-right {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+
+        .hero2 {
+            background-image: url(./img/hero2.jpg);
+            background-size: cover;
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .top {
+                display: flex;
+                justify-content: flex-end;
+                padding: 2rem;
+            }
+
+            .bottom {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 2rem;
+
+                h2 {
+                    color: white;
+                    font-family: "Gilroy-ExtraBold", sans-serif;
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        .footer {
+            flex: 2;
+            display: flex;
+
+            .left {
+                flex: 1;
+                background-color: black;
+                color: white;
+                line-height: 1.7;
+                padding: 2.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .actions,
+                .likes,
+                .share {
+                    display: flex;
+                    align-items: center;
+                }
+
+                .likes {
+                    margin-right: 2rem;
+                }
+
+                .likes,
+                .share {
+                    span {
+                        margin-left: 0.5rem;
+                    }
+                }
+            }
+
+            .right {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+
+                h2 {
+                    font-size: 2.5rem;
+                    font-family: "Gilroy-ExtraBold", sans-serif;
+
+                    span {
+                        display: block;
+                        color: white;
+                        text-shadow: -1px -1px 0 #e39074, 1px -1px 0 #e39074, -1px 1px 0 #e39074, 1px 1px 0 #e39074;
+                    }
+                }
+
+                p {
+                    margin: 0;
+                    font-size: 1.25rem;
+
+                    &.author {
+                        font-family: "Gilroy-ExtraBold", sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}
